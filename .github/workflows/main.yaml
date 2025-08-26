@@ -18,5 +18,5 @@ jobs:
       - name: Set env
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
-      - uses: imjasonh/setup-ko@v0.4
+      - uses: ko-build/setup-ko@v0.8
       - run: ko publish -B ./cmd/tracefs-exporter/ --tags latest,$RELEASE_VERSION
