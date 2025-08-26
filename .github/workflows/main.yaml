@@ -19,6 +19,4 @@ jobs:
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - uses: ko-build/setup-ko@v0.8
-        with:
-          version: v0.15.2
       - run: ko publish -B ./cmd/tracefs-exporter/ --tags latest,$RELEASE_VERSION
